@@ -1,0 +1,44 @@
+{
+  "name": "kuka",
+  "path": "/fsx/ubuntu/taeyoung/data/processing/vla_pretrain_dataset/openx_lerobot/kuka",
+  "ok": true,
+  "issues": [],
+  "info": {
+    "total_episodes": 209880,
+    "total_frames": 2455879,
+    "fps": 10,
+    "robot_type": "Kuka iiwa",
+    "codebase_version": "v2.1",
+    "data_features": [
+      "observation.state",
+      "action",
+      "absolute_action"
+    ],
+    "video_keys": [
+      "observation.images.image"
+    ],
+    "episodes_jsonl_count": 209880,
+    "stats_keys": [
+      "absolute_action",
+      "observation.state",
+      "action",
+      "task_index",
+      "index"
+    ],
+    "tasks_count": 1,
+    "parquet_count": 209880,
+    "parquet_columns": [
+      "observation.state",
+      "action",
+      "absolute_action",
+      "timestamp",
+      "frame_index",
+      "episode_index",
+      "index",
+      "task_index"
+    ],
+    "first_parquet_rows": 6,
+    "mp4_count": 209880
+  },
+  "checked_at": "2026-02-22T18:12:52.471777"
+}

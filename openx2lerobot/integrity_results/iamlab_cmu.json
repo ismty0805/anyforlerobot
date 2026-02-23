@@ -1,0 +1,45 @@
+{
+  "name": "iamlab_cmu",
+  "path": "/fsx/ubuntu/taeyoung/data/processing/vla_pretrain_dataset/openx_lerobot/iamlab_cmu",
+  "ok": true,
+  "issues": [],
+  "info": {
+    "total_episodes": 631,
+    "total_frames": 146241,
+    "fps": 20,
+    "robot_type": "Franka",
+    "codebase_version": "v2.1",
+    "data_features": [
+      "observation.state",
+      "action",
+      "absolute_action"
+    ],
+    "video_keys": [
+      "observation.images.wrist",
+      "observation.images.primary"
+    ],
+    "episodes_jsonl_count": 631,
+    "stats_keys": [
+      "observation.state",
+      "action",
+      "absolute_action",
+      "observation.images.wrist",
+      "observation.images.primary"
+    ],
+    "tasks_count": 7,
+    "parquet_count": 631,
+    "parquet_columns": [
+      "observation.state",
+      "action",
+      "task",
+      "absolute_action",
+      "episode_index",
+      "frame_index",
+      "timestamp",
+      "index"
+    ],
+    "first_parquet_rows": 139,
+    "mp4_count": 1262
+  },
+  "checked_at": "2026-02-22T17:49:33.401736"
+}

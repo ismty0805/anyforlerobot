@@ -1,0 +1,52 @@
+{
+  "name": "action_net",
+  "path": "/fsx/ubuntu/taeyoung/data/processing/vla_pretrain_dataset/action_net",
+  "ok": true,
+  "issues": [],
+  "info": {
+    "total_episodes": 30120,
+    "total_frames": 15489245,
+    "fps": 30,
+    "robot_type": "ActionNet",
+    "codebase_version": "v2.1",
+    "data_features": [
+      "observation.state",
+      "action",
+      "observation.robot_joints",
+      "observation.hand_joints",
+      "action.robot_joints",
+      "action.hand_joints",
+      "absolute_action"
+    ],
+    "video_keys": [
+      "observation.images.primary"
+    ],
+    "episodes_jsonl_count": 30120,
+    "stats_keys": [
+      "observation.state",
+      "action",
+      "observation.robot_joints",
+      "observation.hand_joints",
+      "action.robot_joints"
+    ],
+    "tasks_count": 1578,
+    "parquet_count": 30120,
+    "parquet_columns": [
+      "observation.state",
+      "action",
+      "task",
+      "observation.robot_joints",
+      "observation.hand_joints",
+      "action.robot_joints",
+      "action.hand_joints",
+      "absolute_action",
+      "episode_index",
+      "frame_index",
+      "timestamp",
+      "index"
+    ],
+    "first_parquet_rows": 550,
+    "mp4_count": 30120
+  },
+  "checked_at": "2026-02-22T17:49:35.349447"
+}

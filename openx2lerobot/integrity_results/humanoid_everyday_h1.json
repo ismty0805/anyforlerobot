@@ -1,0 +1,50 @@
+{
+  "name": "humanoid_everyday_h1",
+  "path": "/fsx/ubuntu/taeyoung/data/processing/vla_pretrain_dataset/humanoid_everyday_h1",
+  "ok": true,
+  "issues": [],
+  "info": {
+    "total_episodes": 4885,
+    "total_frames": 1656884,
+    "fps": 30,
+    "robot_type": "Humanoid H1",
+    "codebase_version": "v2.1",
+    "data_features": [
+      "observation.state",
+      "action",
+      "observation.arm_joints",
+      "observation.hand_joints",
+      "original_action",
+      "absolute_action"
+    ],
+    "video_keys": [
+      "observation.images.primary"
+    ],
+    "episodes_jsonl_count": 4885,
+    "stats_keys": [
+      "observation.state",
+      "action",
+      "observation.arm_joints",
+      "observation.hand_joints",
+      "original_action"
+    ],
+    "tasks_count": 1,
+    "parquet_count": 4885,
+    "parquet_columns": [
+      "observation.state",
+      "action",
+      "task",
+      "observation.arm_joints",
+      "observation.hand_joints",
+      "original_action",
+      "absolute_action",
+      "episode_index",
+      "frame_index",
+      "timestamp",
+      "index"
+    ],
+    "first_parquet_rows": 441,
+    "mp4_count": 4885
+  },
+  "checked_at": "2026-02-22T17:49:33.584197"
+}

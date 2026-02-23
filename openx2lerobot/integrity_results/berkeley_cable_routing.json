@@ -1,0 +1,45 @@
+{
+  "name": "berkeley_cable_routing",
+  "path": "/fsx/ubuntu/taeyoung/data/processing/vla_pretrain_dataset/openx_lerobot/berkeley_cable_routing",
+  "ok": true,
+  "issues": [],
+  "info": {
+    "total_episodes": 1482,
+    "total_frames": 38240,
+    "fps": 10,
+    "robot_type": "franka",
+    "codebase_version": "v2.1",
+    "data_features": [
+      "observation.state",
+      "action"
+    ],
+    "video_keys": [
+      "observation.images.top_image",
+      "observation.images.image",
+      "observation.images.wrist45_image",
+      "observation.images.wrist225_image"
+    ],
+    "episodes_jsonl_count": 1482,
+    "stats_keys": [
+      "timestamp",
+      "observation.images.wrist225_image",
+      "observation.images.top_image",
+      "observation.state",
+      "observation.images.image"
+    ],
+    "tasks_count": 1,
+    "parquet_count": 1482,
+    "parquet_columns": [
+      "observation.state",
+      "action",
+      "timestamp",
+      "frame_index",
+      "episode_index",
+      "index",
+      "task_index"
+    ],
+    "first_parquet_rows": 36,
+    "mp4_count": 5928
+  },
+  "checked_at": "2026-02-22T17:49:33.576140"
+}

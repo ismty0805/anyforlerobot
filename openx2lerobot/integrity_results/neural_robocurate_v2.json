@@ -1,0 +1,45 @@
+{
+  "name": "neural_robocurate_v2",
+  "path": "/fsx/ubuntu/taeyoung/data/processing/vla_pretrain_dataset/neural_traj/neural_robocurate_v2",
+  "ok": true,
+  "issues": [],
+  "info": {
+    "total_episodes": 38405,
+    "total_frames": 3571665,
+    "fps": 30,
+    "robot_type": "GR1",
+    "codebase_version": "v2.1",
+    "data_features": [
+      "observation.state",
+      "action",
+      "annotation.human.coarse_action"
+    ],
+    "video_keys": [
+      "observation.images.ego_view"
+    ],
+    "episodes_jsonl_count": 38405,
+    "stats_keys": [
+      "observation.state",
+      "action",
+      "task_index",
+      "annotation.human.coarse_action",
+      "observation.images.ego_view"
+    ],
+    "tasks_count": 24562,
+    "parquet_count": 38405,
+    "parquet_columns": [
+      "observation.state",
+      "action",
+      "timestamp",
+      "episode_index",
+      "index",
+      "task_index",
+      "annotation.human.coarse_action",
+      "original_video_name",
+      "frame_index"
+    ],
+    "first_parquet_rows": 93,
+    "mp4_count": 38405
+  },
+  "checked_at": "2026-02-22T17:49:35.970682"
+}

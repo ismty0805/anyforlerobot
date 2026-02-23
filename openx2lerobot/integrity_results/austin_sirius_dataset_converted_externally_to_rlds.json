@@ -1,0 +1,45 @@
+{
+  "name": "austin_sirius_dataset_converted_externally_to_rlds",
+  "path": "/fsx/ubuntu/taeyoung/data/processing/vla_pretrain_dataset/openx_lerobot/austin_sirius_dataset_converted_externally_to_rlds",
+  "ok": true,
+  "issues": [],
+  "info": {
+    "total_episodes": 559,
+    "total_frames": 279939,
+    "fps": 20,
+    "robot_type": "franka",
+    "codebase_version": "v2.1",
+    "data_features": [
+      "observation.state",
+      "action",
+      "absolute_action"
+    ],
+    "video_keys": [
+      "observation.images.wrist_image",
+      "observation.images.image"
+    ],
+    "episodes_jsonl_count": 559,
+    "stats_keys": [
+      "timestamp",
+      "action",
+      "observation.state",
+      "index",
+      "absolute_action"
+    ],
+    "tasks_count": 2,
+    "parquet_count": 559,
+    "parquet_columns": [
+      "observation.state",
+      "action",
+      "absolute_action",
+      "timestamp",
+      "frame_index",
+      "episode_index",
+      "index",
+      "task_index"
+    ],
+    "first_parquet_rows": 573,
+    "mp4_count": 1118
+  },
+  "checked_at": "2026-02-22T17:49:33.388426"
+}

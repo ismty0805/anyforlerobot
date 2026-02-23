@@ -1,0 +1,46 @@
+{
+  "name": "fmb_dataset",
+  "path": "/fsx/ubuntu/taeyoung/data/processing/vla_pretrain_dataset/openx_lerobot/fmb_dataset",
+  "ok": true,
+  "issues": [],
+  "info": {
+    "total_episodes": 8611,
+    "total_frames": 1137340,
+    "fps": 10,
+    "robot_type": "Franka",
+    "codebase_version": "v2.1",
+    "data_features": [
+      "observation.state",
+      "action",
+      "absolute_action"
+    ],
+    "video_keys": [
+      "observation.images.secondary",
+      "observation.images.wrist",
+      "observation.images.primary"
+    ],
+    "episodes_jsonl_count": 8611,
+    "stats_keys": [
+      "observation.state",
+      "action",
+      "absolute_action",
+      "observation.images.secondary",
+      "observation.images.wrist"
+    ],
+    "tasks_count": 24,
+    "parquet_count": 8611,
+    "parquet_columns": [
+      "observation.state",
+      "action",
+      "task",
+      "absolute_action",
+      "episode_index",
+      "frame_index",
+      "timestamp",
+      "index"
+    ],
+    "first_parquet_rows": 254,
+    "mp4_count": 25833
+  },
+  "checked_at": "2026-02-22T17:49:34.143776"
+}

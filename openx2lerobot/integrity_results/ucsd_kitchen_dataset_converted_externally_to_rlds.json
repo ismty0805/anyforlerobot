@@ -1,0 +1,42 @@
+{
+  "name": "ucsd_kitchen_dataset_converted_externally_to_rlds",
+  "path": "/fsx/ubuntu/taeyoung/data/processing/vla_pretrain_dataset/openx_lerobot/ucsd_kitchen_dataset_converted_externally_to_rlds",
+  "ok": true,
+  "issues": [],
+  "info": {
+    "total_episodes": 150,
+    "total_frames": 3970,
+    "fps": 2,
+    "robot_type": "xarm",
+    "codebase_version": "v2.1",
+    "data_features": [
+      "observation.state",
+      "action"
+    ],
+    "video_keys": [
+      "observation.images.image"
+    ],
+    "episodes_jsonl_count": 150,
+    "stats_keys": [
+      "timestamp",
+      "observation.state",
+      "index",
+      "episode_index",
+      "task_index"
+    ],
+    "tasks_count": 8,
+    "parquet_count": 150,
+    "parquet_columns": [
+      "observation.state",
+      "action",
+      "timestamp",
+      "frame_index",
+      "episode_index",
+      "index",
+      "task_index"
+    ],
+    "first_parquet_rows": 35,
+    "mp4_count": 150
+  },
+  "checked_at": "2026-02-22T17:49:33.351652"
+}

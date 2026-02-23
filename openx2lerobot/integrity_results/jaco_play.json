@@ -1,0 +1,43 @@
+{
+  "name": "jaco_play",
+  "path": "/fsx/ubuntu/taeyoung/data/processing/vla_pretrain_dataset/openx_lerobot/jaco_play",
+  "ok": true,
+  "issues": [],
+  "info": {
+    "total_episodes": 976,
+    "total_frames": 70127,
+    "fps": 10,
+    "robot_type": "jaco_2",
+    "codebase_version": "v2.1",
+    "data_features": [
+      "observation.state",
+      "action"
+    ],
+    "video_keys": [
+      "observation.images.image",
+      "observation.images.image_wrist"
+    ],
+    "episodes_jsonl_count": 976,
+    "stats_keys": [
+      "task_index",
+      "timestamp",
+      "observation.state",
+      "index",
+      "episode_index"
+    ],
+    "tasks_count": 88,
+    "parquet_count": 976,
+    "parquet_columns": [
+      "observation.state",
+      "action",
+      "timestamp",
+      "frame_index",
+      "episode_index",
+      "index",
+      "task_index"
+    ],
+    "first_parquet_rows": 87,
+    "mp4_count": 1952
+  },
+  "checked_at": "2026-02-22T17:49:33.434485"
+}

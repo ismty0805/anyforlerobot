@@ -1,0 +1,46 @@
+{
+  "name": "droid",
+  "path": "/fsx/ubuntu/taeyoung/data/processing/vla_pretrain_dataset/openx_lerobot/droid",
+  "ok": true,
+  "issues": [],
+  "info": {
+    "total_episodes": 91875,
+    "total_frames": 26940429,
+    "fps": 15,
+    "robot_type": "Franka",
+    "codebase_version": "v2.1",
+    "data_features": [
+      "observation.state",
+      "action",
+      "absolute_action"
+    ],
+    "video_keys": [
+      "observation.images.exterior_image_2_left",
+      "observation.images.wrist_image_left",
+      "observation.images.exterior_image_1_left"
+    ],
+    "episodes_jsonl_count": 91875,
+    "stats_keys": [
+      "observation.state",
+      "observation.images.wrist_image_left",
+      "index",
+      "episode_index",
+      "action"
+    ],
+    "tasks_count": 31199,
+    "parquet_count": 91875,
+    "parquet_columns": [
+      "observation.state",
+      "action",
+      "absolute_action",
+      "timestamp",
+      "frame_index",
+      "episode_index",
+      "index",
+      "task_index"
+    ],
+    "first_parquet_rows": 213,
+    "mp4_count": 275625
+  },
+  "checked_at": "2026-02-22T18:12:51.117596"
+}

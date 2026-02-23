@@ -1,0 +1,42 @@
+{
+  "name": "dobbe",
+  "path": "/fsx/ubuntu/taeyoung/data/processing/vla_pretrain_dataset/openx_lerobot/dobbe",
+  "ok": true,
+  "issues": [],
+  "info": {
+    "total_episodes": 5208,
+    "total_frames": 1139911,
+    "fps": 3,
+    "robot_type": "hello_stretch",
+    "codebase_version": "v2.1",
+    "data_features": [
+      "observation.state",
+      "action"
+    ],
+    "video_keys": [
+      "observation.images.wrist_image"
+    ],
+    "episodes_jsonl_count": 5208,
+    "stats_keys": [
+      "observation.state",
+      "action",
+      "observation.images.wrist_image",
+      "index",
+      "timestamp"
+    ],
+    "tasks_count": 7,
+    "parquet_count": 5208,
+    "parquet_columns": [
+      "observation.state",
+      "action",
+      "timestamp",
+      "frame_index",
+      "episode_index",
+      "index",
+      "task_index"
+    ],
+    "first_parquet_rows": 144,
+    "mp4_count": 5208
+  },
+  "checked_at": "2026-02-22T17:49:33.609655"
+}

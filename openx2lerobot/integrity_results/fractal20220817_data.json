@@ -1,0 +1,43 @@
+{
+  "name": "fractal20220817_data",
+  "path": "/fsx/ubuntu/taeyoung/data/processing/vla_pretrain_dataset/openx_lerobot/fractal20220817_data",
+  "ok": true,
+  "issues": [],
+  "info": {
+    "total_episodes": 87212,
+    "total_frames": 3786400,
+    "fps": 3,
+    "robot_type": "Google Robot",
+    "codebase_version": "v2.1",
+    "data_features": [
+      "observation.state",
+      "action",
+      "absolute_action"
+    ],
+    "video_keys": [
+      "observation.images.primary"
+    ],
+    "episodes_jsonl_count": 87212,
+    "stats_keys": [
+      "observation.state",
+      "action",
+      "absolute_action",
+      "observation.images.primary"
+    ],
+    "tasks_count": 579,
+    "parquet_count": 87212,
+    "parquet_columns": [
+      "observation.state",
+      "action",
+      "task",
+      "absolute_action",
+      "episode_index",
+      "frame_index",
+      "timestamp",
+      "index"
+    ],
+    "first_parquet_rows": 36,
+    "mp4_count": 87212
+  },
+  "checked_at": "2026-02-22T17:49:38.536506"
+}

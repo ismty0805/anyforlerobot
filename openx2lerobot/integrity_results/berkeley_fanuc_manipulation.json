@@ -1,0 +1,43 @@
+{
+  "name": "berkeley_fanuc_manipulation",
+  "path": "/fsx/ubuntu/taeyoung/data/processing/vla_pretrain_dataset/openx_lerobot/berkeley_fanuc_manipulation",
+  "ok": true,
+  "issues": [],
+  "info": {
+    "total_episodes": 415,
+    "total_frames": 62613,
+    "fps": 10,
+    "robot_type": "fanuc_mate",
+    "codebase_version": "v2.1",
+    "data_features": [
+      "observation.state",
+      "action"
+    ],
+    "video_keys": [
+      "observation.images.wrist_image",
+      "observation.images.image"
+    ],
+    "episodes_jsonl_count": 415,
+    "stats_keys": [
+      "action",
+      "index",
+      "observation.images.image",
+      "timestamp",
+      "episode_index"
+    ],
+    "tasks_count": 32,
+    "parquet_count": 415,
+    "parquet_columns": [
+      "observation.state",
+      "action",
+      "timestamp",
+      "frame_index",
+      "episode_index",
+      "index",
+      "task_index"
+    ],
+    "first_parquet_rows": 211,
+    "mp4_count": 830
+  },
+  "checked_at": "2026-02-22T17:49:33.368700"
+}

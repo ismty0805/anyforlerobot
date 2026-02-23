@@ -1,0 +1,42 @@
+{
+  "name": "toto",
+  "path": "/fsx/ubuntu/taeyoung/data/processing/vla_pretrain_dataset/openx_lerobot/toto",
+  "ok": true,
+  "issues": [],
+  "info": {
+    "total_episodes": 902,
+    "total_frames": 294139,
+    "fps": 30,
+    "robot_type": "franka",
+    "codebase_version": "v2.1",
+    "data_features": [
+      "observation.state",
+      "action"
+    ],
+    "video_keys": [
+      "observation.images.image"
+    ],
+    "episodes_jsonl_count": 902,
+    "stats_keys": [
+      "timestamp",
+      "observation.state",
+      "frame_index",
+      "action",
+      "observation.images.image"
+    ],
+    "tasks_count": 1,
+    "parquet_count": 902,
+    "parquet_columns": [
+      "observation.state",
+      "action",
+      "timestamp",
+      "frame_index",
+      "episode_index",
+      "index",
+      "task_index"
+    ],
+    "first_parquet_rows": 591,
+    "mp4_count": 902
+  },
+  "checked_at": "2026-02-22T17:49:33.392875"
+}

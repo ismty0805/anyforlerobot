@@ -1,0 +1,45 @@
+{
+  "name": "utaustin_mutex",
+  "path": "/fsx/ubuntu/taeyoung/data/processing/vla_pretrain_dataset/openx_lerobot/utaustin_mutex",
+  "ok": true,
+  "issues": [],
+  "info": {
+    "total_episodes": 1500,
+    "total_frames": 361883,
+    "fps": 20,
+    "robot_type": "franka",
+    "codebase_version": "v2.1",
+    "data_features": [
+      "observation.state",
+      "action",
+      "absolute_action"
+    ],
+    "video_keys": [
+      "observation.images.image",
+      "observation.images.wrist_image"
+    ],
+    "episodes_jsonl_count": 1500,
+    "stats_keys": [
+      "task_index",
+      "action",
+      "episode_index",
+      "observation.images.wrist_image",
+      "frame_index"
+    ],
+    "tasks_count": 50,
+    "parquet_count": 1500,
+    "parquet_columns": [
+      "observation.state",
+      "action",
+      "absolute_action",
+      "timestamp",
+      "frame_index",
+      "episode_index",
+      "index",
+      "task_index"
+    ],
+    "first_parquet_rows": 141,
+    "mp4_count": 3000
+  },
+  "checked_at": "2026-02-22T17:49:33.485232"
+}

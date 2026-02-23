@@ -1,0 +1,42 @@
+{
+  "name": "roboturk",
+  "path": "/fsx/ubuntu/taeyoung/data/processing/vla_pretrain_dataset/openx_lerobot/roboturk",
+  "ok": true,
+  "issues": [],
+  "info": {
+    "total_episodes": 1796,
+    "total_frames": 168423,
+    "fps": 10,
+    "robot_type": "sawyer",
+    "codebase_version": "v2.1",
+    "data_features": [
+      "observation.state",
+      "action"
+    ],
+    "video_keys": [
+      "observation.images.front_rgb"
+    ],
+    "episodes_jsonl_count": 1796,
+    "stats_keys": [
+      "episode_index",
+      "task_index",
+      "observation.state",
+      "index",
+      "observation.images.front_rgb"
+    ],
+    "tasks_count": 3,
+    "parquet_count": 1796,
+    "parquet_columns": [
+      "observation.state",
+      "action",
+      "timestamp",
+      "frame_index",
+      "episode_index",
+      "index",
+      "task_index"
+    ],
+    "first_parquet_rows": 163,
+    "mp4_count": 1796
+  },
+  "checked_at": "2026-02-22T17:49:33.443384"
+}

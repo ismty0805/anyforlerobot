@@ -1,0 +1,42 @@
+{
+  "name": "dlr_edan_shared_control_converted_externally_to_rlds",
+  "path": "/fsx/ubuntu/taeyoung/data/processing/vla_pretrain_dataset/openx_lerobot/dlr_edan_shared_control_converted_externally_to_rlds",
+  "ok": true,
+  "issues": [],
+  "info": {
+    "total_episodes": 104,
+    "total_frames": 8928,
+    "fps": 5,
+    "robot_type": "dlr_edan",
+    "codebase_version": "v2.1",
+    "data_features": [
+      "observation.state",
+      "action"
+    ],
+    "video_keys": [
+      "observation.images.image"
+    ],
+    "episodes_jsonl_count": 104,
+    "stats_keys": [
+      "action",
+      "index",
+      "episode_index",
+      "task_index",
+      "timestamp"
+    ],
+    "tasks_count": 10,
+    "parquet_count": 104,
+    "parquet_columns": [
+      "observation.state",
+      "action",
+      "timestamp",
+      "frame_index",
+      "episode_index",
+      "index",
+      "task_index"
+    ],
+    "first_parquet_rows": 64,
+    "mp4_count": 104
+  },
+  "checked_at": "2026-02-22T17:49:33.347318"
+}

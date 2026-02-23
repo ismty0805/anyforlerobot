@@ -1,0 +1,47 @@
+{
+  "name": "bridge_orig",
+  "path": "/fsx/ubuntu/taeyoung/data/processing/vla_pretrain_dataset/openx_lerobot/bridge_orig",
+  "ok": true,
+  "issues": [],
+  "info": {
+    "total_episodes": 53169,
+    "total_frames": 1892235,
+    "fps": 5,
+    "robot_type": "WidowX",
+    "codebase_version": "v2.1",
+    "data_features": [
+      "observation.state",
+      "action",
+      "absolute_action"
+    ],
+    "video_keys": [
+      "observation.images.image_1",
+      "observation.images.image_2",
+      "observation.images.image_0",
+      "observation.images.image_3"
+    ],
+    "episodes_jsonl_count": 53169,
+    "stats_keys": [
+      "absolute_action",
+      "observation.state",
+      "observation.images.image_0",
+      "task_index",
+      "frame_index"
+    ],
+    "tasks_count": 19963,
+    "parquet_count": 53169,
+    "parquet_columns": [
+      "observation.state",
+      "action",
+      "absolute_action",
+      "timestamp",
+      "frame_index",
+      "episode_index",
+      "index",
+      "task_index"
+    ],
+    "first_parquet_rows": 40,
+    "mp4_count": 212676
+  },
+  "checked_at": "2026-02-22T18:12:49.971191"
+}

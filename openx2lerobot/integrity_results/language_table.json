@@ -1,0 +1,44 @@
+{
+  "name": "language_table",
+  "path": "/fsx/ubuntu/taeyoung/data/processing/vla_pretrain_dataset/openx_lerobot/language_table",
+  "ok": true,
+  "issues": [],
+  "info": {
+    "total_episodes": 442226,
+    "total_frames": 7045476,
+    "fps": 10,
+    "robot_type": "xArm",
+    "codebase_version": "v2.1",
+    "data_features": [
+      "observation.state",
+      "action",
+      "absolute_action"
+    ],
+    "video_keys": [
+      "observation.images.rgb"
+    ],
+    "episodes_jsonl_count": 442226,
+    "stats_keys": [
+      "index",
+      "observation.images.rgb",
+      "timestamp",
+      "task_index",
+      "action"
+    ],
+    "tasks_count": 127583,
+    "parquet_count": 442226,
+    "parquet_columns": [
+      "observation.state",
+      "action",
+      "absolute_action",
+      "timestamp",
+      "frame_index",
+      "episode_index",
+      "index",
+      "task_index"
+    ],
+    "first_parquet_rows": 12,
+    "mp4_count": 442226
+  },
+  "checked_at": "2026-02-22T18:13:05.762985"
+}

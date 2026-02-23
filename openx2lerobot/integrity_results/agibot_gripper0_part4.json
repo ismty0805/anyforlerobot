@@ -1,0 +1,62 @@
+{
+  "name": "agibot_gripper0_part4",
+  "path": "/fsx/ubuntu/taeyoung/data/processing/vla_pretrain_dataset/agibot/agibot_gripper0_part4",
+  "ok": true,
+  "issues": [],
+  "info": {
+    "total_episodes": 61106,
+    "total_frames": 16531721,
+    "fps": 30,
+    "robot_type": "Agibot",
+    "codebase_version": "v2.1",
+    "data_features": [
+      "observation.state",
+      "action",
+      "observation.joint_position",
+      "observation.effector_gripper_pos_mm",
+      "observation.head_position",
+      "observation.waist_position",
+      "action.joint_position",
+      "action.effector_gripper_pos",
+      "action.head_position",
+      "action.waist_position",
+      "absolute_action"
+    ],
+    "video_keys": [
+      "observation.images.wrist_left",
+      "observation.images.wrist_right",
+      "observation.images.primary"
+    ],
+    "episodes_jsonl_count": 61106,
+    "stats_keys": [
+      "observation.state",
+      "action",
+      "observation.joint_position",
+      "observation.effector_gripper_pos_mm",
+      "observation.head_position"
+    ],
+    "tasks_count": 3224,
+    "parquet_count": 61106,
+    "parquet_columns": [
+      "observation.state",
+      "action",
+      "task",
+      "observation.joint_position",
+      "observation.effector_gripper_pos_mm",
+      "observation.head_position",
+      "observation.waist_position",
+      "action.joint_position",
+      "action.effector_gripper_pos",
+      "action.head_position",
+      "action.waist_position",
+      "absolute_action",
+      "episode_index",
+      "frame_index",
+      "timestamp",
+      "index"
+    ],
+    "first_parquet_rows": 181,
+    "mp4_count": 183318
+  },
+  "checked_at": "2026-02-22T17:49:40.021622"
+}

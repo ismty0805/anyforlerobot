@@ -1,0 +1,45 @@
+{
+  "name": "viola",
+  "path": "/fsx/ubuntu/taeyoung/data/processing/vla_pretrain_dataset/openx_lerobot/viola",
+  "ok": true,
+  "issues": [],
+  "info": {
+    "total_episodes": 135,
+    "total_frames": 68913,
+    "fps": 20,
+    "robot_type": "franka",
+    "codebase_version": "v2.1",
+    "data_features": [
+      "observation.state",
+      "action",
+      "absolute_action"
+    ],
+    "video_keys": [
+      "observation.images.eye_in_hand_rgb",
+      "observation.images.agentview_rgb"
+    ],
+    "episodes_jsonl_count": 135,
+    "stats_keys": [
+      "observation.images.eye_in_hand_rgb",
+      "observation.state",
+      "frame_index",
+      "task_index",
+      "episode_index"
+    ],
+    "tasks_count": 3,
+    "parquet_count": 135,
+    "parquet_columns": [
+      "observation.state",
+      "action",
+      "absolute_action",
+      "timestamp",
+      "frame_index",
+      "episode_index",
+      "index",
+      "task_index"
+    ],
+    "first_parquet_rows": 753,
+    "mp4_count": 270
+  },
+  "checked_at": "2026-02-22T17:49:33.360493"
+}

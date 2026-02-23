@@ -1,0 +1,60 @@
+{
+  "name": "agibot_dexhand",
+  "path": "/fsx/ubuntu/taeyoung/data/processing/vla_pretrain_dataset/agibot/agibot_dexhand",
+  "ok": true,
+  "issues": [],
+  "info": {
+    "total_episodes": 36425,
+    "total_frames": 8011584,
+    "fps": 30,
+    "robot_type": "Agibot",
+    "codebase_version": "v2.1",
+    "data_features": [
+      "observation.state",
+      "action",
+      "observation.joint_position",
+      "observation.effector_dexhand_qpos",
+      "observation.head_position",
+      "observation.waist_position",
+      "action.joint_position",
+      "action.effector_dexhand_qpos",
+      "action.head_position",
+      "action.waist_position",
+      "absolute_action"
+    ],
+    "video_keys": [
+      "observation.images.primary"
+    ],
+    "episodes_jsonl_count": 36425,
+    "stats_keys": [
+      "observation.state",
+      "action",
+      "observation.joint_position",
+      "observation.effector_dexhand_qpos",
+      "observation.head_position"
+    ],
+    "tasks_count": 175,
+    "parquet_count": 36425,
+    "parquet_columns": [
+      "observation.state",
+      "action",
+      "task",
+      "observation.joint_position",
+      "observation.effector_dexhand_qpos",
+      "observation.head_position",
+      "observation.waist_position",
+      "action.joint_position",
+      "action.effector_dexhand_qpos",
+      "action.head_position",
+      "action.waist_position",
+      "absolute_action",
+      "episode_index",
+      "frame_index",
+      "timestamp",
+      "index"
+    ],
+    "first_parquet_rows": 282,
+    "mp4_count": 36425
+  },
+  "checked_at": "2026-02-22T17:49:35.777501"
+}

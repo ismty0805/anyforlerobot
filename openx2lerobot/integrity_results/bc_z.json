@@ -1,0 +1,43 @@
+{
+  "name": "bc_z",
+  "path": "/fsx/ubuntu/taeyoung/data/processing/vla_pretrain_dataset/openx_lerobot/bc_z",
+  "ok": true,
+  "issues": [],
+  "info": {
+    "total_episodes": 39350,
+    "total_frames": 5471693,
+    "fps": 10,
+    "robot_type": "Google Robot",
+    "codebase_version": "v2.1",
+    "data_features": [
+      "observation.state",
+      "action",
+      "absolute_action"
+    ],
+    "video_keys": [
+      "observation.images.primary"
+    ],
+    "episodes_jsonl_count": 39350,
+    "stats_keys": [
+      "observation.state",
+      "action",
+      "absolute_action",
+      "observation.images.primary"
+    ],
+    "tasks_count": 104,
+    "parquet_count": 39350,
+    "parquet_columns": [
+      "observation.state",
+      "action",
+      "task",
+      "absolute_action",
+      "episode_index",
+      "frame_index",
+      "timestamp",
+      "index"
+    ],
+    "first_parquet_rows": 201,
+    "mp4_count": 39350
+  },
+  "checked_at": "2026-02-22T17:49:36.038130"
+}

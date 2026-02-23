@@ -1,0 +1,43 @@
+{
+  "name": "stanford_hydra_dataset_converted_externally_to_rlds",
+  "path": "/fsx/ubuntu/taeyoung/data/processing/vla_pretrain_dataset/openx_lerobot/stanford_hydra_dataset_converted_externally_to_rlds",
+  "ok": true,
+  "issues": [],
+  "info": {
+    "total_episodes": 570,
+    "total_frames": 358234,
+    "fps": 10,
+    "robot_type": "franka",
+    "codebase_version": "v2.1",
+    "data_features": [
+      "observation.state",
+      "action"
+    ],
+    "video_keys": [
+      "observation.images.wrist_image",
+      "observation.images.image"
+    ],
+    "episodes_jsonl_count": 570,
+    "stats_keys": [
+      "observation.images.image",
+      "observation.images.wrist_image",
+      "episode_index",
+      "index",
+      "task_index"
+    ],
+    "tasks_count": 3,
+    "parquet_count": 570,
+    "parquet_columns": [
+      "observation.state",
+      "action",
+      "timestamp",
+      "frame_index",
+      "episode_index",
+      "index",
+      "task_index"
+    ],
+    "first_parquet_rows": 741,
+    "mp4_count": 1140
+  },
+  "checked_at": "2026-02-22T17:49:33.401607"
+}

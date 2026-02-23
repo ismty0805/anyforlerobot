@@ -1,0 +1,45 @@
+{
+  "name": "berkeley_autolab_ur5",
+  "path": "/fsx/ubuntu/taeyoung/data/processing/vla_pretrain_dataset/openx_lerobot/berkeley_autolab_ur5",
+  "ok": true,
+  "issues": [],
+  "info": {
+    "total_episodes": 896,
+    "total_frames": 87783,
+    "fps": 5,
+    "robot_type": "ur5",
+    "codebase_version": "v2.1",
+    "data_features": [
+      "observation.state",
+      "action",
+      "absolute_action"
+    ],
+    "video_keys": [
+      "observation.images.image",
+      "observation.images.hand_image"
+    ],
+    "episodes_jsonl_count": 896,
+    "stats_keys": [
+      "observation.images.hand_image",
+      "frame_index",
+      "task_index",
+      "observation.images.image",
+      "action"
+    ],
+    "tasks_count": 5,
+    "parquet_count": 896,
+    "parquet_columns": [
+      "observation.state",
+      "action",
+      "absolute_action",
+      "timestamp",
+      "frame_index",
+      "episode_index",
+      "index",
+      "task_index"
+    ],
+    "first_parquet_rows": 118,
+    "mp4_count": 1792
+  },
+  "checked_at": "2026-02-22T17:49:33.421656"
+}

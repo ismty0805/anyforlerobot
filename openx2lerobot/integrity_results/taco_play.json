@@ -1,0 +1,43 @@
+{
+  "name": "taco_play",
+  "path": "/fsx/ubuntu/taeyoung/data/processing/vla_pretrain_dataset/openx_lerobot/taco_play",
+  "ok": true,
+  "issues": [],
+  "info": {
+    "total_episodes": 3242,
+    "total_frames": 213972,
+    "fps": 15,
+    "robot_type": "franka",
+    "codebase_version": "v2.1",
+    "data_features": [
+      "observation.state",
+      "action"
+    ],
+    "video_keys": [
+      "observation.images.rgb_static",
+      "observation.images.rgb_gripper"
+    ],
+    "episodes_jsonl_count": 3242,
+    "stats_keys": [
+      "timestamp",
+      "action",
+      "observation.images.rgb_gripper",
+      "observation.state",
+      "task_index"
+    ],
+    "tasks_count": 403,
+    "parquet_count": 3242,
+    "parquet_columns": [
+      "observation.state",
+      "action",
+      "timestamp",
+      "frame_index",
+      "episode_index",
+      "index",
+      "task_index"
+    ],
+    "first_parquet_rows": 66,
+    "mp4_count": 6484
+  },
+  "checked_at": "2026-02-22T17:49:33.619160"
+}

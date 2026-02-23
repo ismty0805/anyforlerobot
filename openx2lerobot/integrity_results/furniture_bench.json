@@ -1,0 +1,45 @@
+{
+  "name": "furniture_bench",
+  "path": "/fsx/ubuntu/taeyoung/data/processing/vla_pretrain_dataset/openx_lerobot/furniture_bench",
+  "ok": true,
+  "issues": [],
+  "info": {
+    "total_episodes": 5100,
+    "total_frames": 3948057,
+    "fps": 10,
+    "robot_type": "Franka",
+    "codebase_version": "v2.1",
+    "data_features": [
+      "observation.state",
+      "action",
+      "absolute_action"
+    ],
+    "video_keys": [
+      "observation.images.wrist",
+      "observation.images.primary"
+    ],
+    "episodes_jsonl_count": 5100,
+    "stats_keys": [
+      "observation.state",
+      "action",
+      "absolute_action",
+      "observation.images.wrist",
+      "observation.images.primary"
+    ],
+    "tasks_count": 9,
+    "parquet_count": 5100,
+    "parquet_columns": [
+      "observation.state",
+      "action",
+      "task",
+      "absolute_action",
+      "episode_index",
+      "frame_index",
+      "timestamp",
+      "index"
+    ],
+    "first_parquet_rows": 409,
+    "mp4_count": 10200
+  },
+  "checked_at": "2026-02-22T17:49:33.739564"
+}

@@ -7,13 +7,17 @@ Enforces serial processing to survive SVT-AV1 encoding.
 """
 
 import argparse
-import shutil
 import os
 import re
 import json
 from pathlib import Path
 from functools import partial
 import math
+import shutil
+import subprocess
+import pandas as pd
+import pyarrow as pa
+import pyarrow.parquet as pq
 
 import numpy as np
 import tensorflow as tf
@@ -198,70 +202,138 @@ def process_shards_native(args):
         fps = OXE_DATASET_CONFIGS[dataset_name]["control_frequency"]
         robot_type = OXE_DATASET_CONFIGS[dataset_name]["robot_type"]
 
-    # 5. LeRobot Dataset 생성
-    # [중요] SVT-AV1 OOM 방지를 위한 단일 프로세스 모드
-    lerobot_dataset = LeRobotDataset.create(
-        repo_id=None,
-        robot_type=robot_type,
-        root=shard_output_dir,
-        fps=int(fps),
-        use_videos=args.use_videos,
-        features=features,
-        image_writer_processes=1, # [핵심] 병렬 인코딩 금지
-        image_writer_threads=1,   # 코어 수만큼 스레드 할당
-        vcodec="h264"
-    )
-    
-    # 변환 루프
-    compute_abs = "absolute_action" in lerobot_dataset.features
-    iterator = ds.as_numpy_iterator()
-    count = 0
-
-    # tqdm ETA를 위한 총 에피소드 수 계산
-    total_episodes = None
-    try:
-        shard_lengths = builder.info.splits['train'].shard_lengths
-        if shard_lengths:
-            total_episodes = sum(shard_lengths[start_shard_idx:end_shard_idx])
-    except:
-        pass
-
-    for episode in tqdm(iterator, total=total_episodes, desc=f"Job {args.job_id}", mininterval=5.0):
-        traj = episode
-        task_desc = traj["task"][0].decode("utf-8")
-        num_frames = traj["action"].shape[0]
+    if args.mode == "v3":
+        # 5. LeRobot Dataset creation
+        # [중요] SVT-AV1 OOM 방지를 위한 단일 프로세스 모드
+        lerobot_dataset = LeRobotDataset.create(
+            repo_id=None,
+            robot_type=robot_type,
+            root=shard_output_dir,
+            fps=int(fps),
+            use_videos=args.use_videos,
+            features=features,
+            image_writer_processes=1, # [핵심] 병렬 인코딩 금지
+            image_writer_threads=1,   # 코어 수만큼 스레드 할당
+            vcodec="h264"
+        )
         
-        for i in range(num_frames):
-            frame_data = {
-                f"observation.images.{key}": value[i]
-                for key, value in traj["observation"].items()
-                if "depth" not in key and any(x in key for x in ["image", "rgb"])
-            }
-            frame_data.update({
-                "observation.state": traj["proprio"][i],
-                "action": traj["action"][i],
-                "task": task_desc,
-            })
-            if compute_abs:
-                try: frame_data["absolute_action"] = compute_absolute_action(traj["proprio"][i], traj["action"][i], dataset_name)
-                except: pass
+        # 변환 루프
+        compute_abs = "absolute_action" in lerobot_dataset.features
+        iterator = ds.as_numpy_iterator()
+        count = 0
+
+        # tqdm ETA를 위한 총 에피소드 수 계산
+        total_episodes = None
+        try:
+            shard_lengths = builder.info.splits['train'].shard_lengths
+            if shard_lengths:
+                total_episodes = sum(shard_lengths[start_shard_idx:end_shard_idx])
+        except:
+            pass
+
+        for episode in tqdm(iterator, total=total_episodes, desc=f"Job {args.job_id}", mininterval=10.0):
+            traj = episode
+            task_desc = traj["task"][0].decode("utf-8") if isinstance(traj["task"][0], bytes) else str(traj["task"][0])
+            num_frames = traj["action"].shape[0]
             
-            lerobot_dataset.add_frame(frame_data)
-        
-        lerobot_dataset.save_episode()
-        count += 1
-        
-        # [Aggressive Cleanup] Delete episode data immediately
-        del traj
-        del episode
-        
-        if count % 1 == 0: # Every episode
-            import gc; gc.collect()
+            for i in range(num_frames):
+                frame_data = {
+                    f"observation.images.{key}": value[i]
+                    for key, value in traj["observation"].items()
+                    if "depth" not in key and any(x in key for x in ["image", "rgb"])
+                }
+                frame_data.update({
+                    "observation.state": traj["proprio"][i],
+                    "action": traj["action"][i],
+                    "task": task_desc,
+                })
+                if compute_abs:
+                    try: frame_data["absolute_action"] = compute_absolute_action(traj["proprio"][i], traj["action"][i], dataset_name)
+                    except: pass
+                
+                lerobot_dataset.add_frame(frame_data)
+            
+            lerobot_dataset.save_episode()
+            count += 1
+            
+            if count % 10 == 0:
+                import gc; gc.collect()
 
-    print(f"Job {args.job_id} Finished. Processed {count} episodes.")
-    
-    # [IMPORTANT] Explicit cleanup
-    del lerobot_dataset
+        print(f"Job {args.job_id} Finished. Processed {count} episodes.")
+        del lerobot_dataset
+    else:
+        # 6. Legacy (v2.1) mode: Save each episode individually
+        print(f"Job {args.job_id}: Running in LEGACY (v2.1) mode.")
+        shard_output_dir.mkdir(parents=True, exist_ok=True)
+        data_dir = shard_output_dir / "data"
+        data_dir.mkdir(exist_ok=True)
+        
+        image_obs_keys = OXE_DATASET_CONFIGS[dataset_name]["image_obs_keys"] if dataset_name in OXE_DATASET_CONFIGS else {}
+        
+        iterator = ds.as_numpy_iterator()
+        count = 0
+        metadata_records = []
+
+        for episode in tqdm(iterator, desc=f"Job {args.job_id}", mininterval=10.0):
+            num_frames = episode["action"].shape[0]
+            task_desc = episode["task"][0].decode("utf-8") if isinstance(episode["task"][0], bytes) else str(episode["task"][0])
+            
+            # Save Parquet
+            rows = []
+            for i in range(num_frames):
+                row = {
+                    "observation.state": episode["proprio"][i].tolist(),
+                    "action": episode["action"][i].tolist(),
+                    "task": task_desc,
+                }
+                try:
+                    abs_act = compute_absolute_action(episode["proprio"][i], episode["action"][i], dataset_name)
+                    row["absolute_action"] = abs_act.tolist()
+                except:
+                    pass
+                rows.append(row)
+            
+            df = pd.DataFrame(rows)
+            pq_path = data_dir / f"episode_{count:06d}.parquet"
+            pq.write_table(pa.Table.from_pandas(df), pq_path)
+            
+            # Save Videos
+            if args.use_videos:
+                for cam_name, config_key in image_obs_keys.items():
+                    if config_key is None: continue
+                    if config_key not in episode["observation"]:
+                        continue
+                        
+                    vid_dir = shard_output_dir / "videos" / f"observation.images.{cam_name}"
+                    vid_dir.mkdir(parents=True, exist_ok=True)
+                    vid_path = vid_dir / f"episode_{count:06d}.mp4"
+                    
+                    img_seq = episode["observation"][config_key]
+                    h, w = img_seq.shape[1:3]
+                    
+                    proc = subprocess.Popen([
+                        'ffmpeg', '-y', '-f', 'rawvideo', '-pix_fmt', 'rgb24', '-s', f'{w}x{h}', '-r', str(fps),
+                        '-i', '-', '-vcodec', 'libx264', '-crf', '21', '-pix_fmt', 'yuv420p', str(vid_path)
+                    ], stdin=subprocess.PIPE, stderr=subprocess.DEVNULL)
+                    for i in range(num_frames):
+                        proc.stdin.write(img_seq[i].tobytes())
+                    proc.stdin.close()
+                    proc.wait()
+            
+            metadata_records.append({
+                "local_id": count,
+                "length": num_frames,
+                "task": task_desc
+            })
+            count += 1
+            if count % 10 == 0:
+                import gc; gc.collect()
+
+        # Save local metadata list
+        with open(shard_output_dir / "metadata.jsonl", "w") as f:
+            for rec in metadata_records:
+                f.write(json.dumps(rec) + "\n")
+
     import gc; gc.collect()
     print(f"Job {args.job_id} cleaned up.")
 
@@ -277,6 +349,9 @@ def main():
     
     # 데이터셋 물리 정보
     parser.add_argument("--total-physical-shards", type=int, default=2048, help="Total number of .tfrecord files (e.g. 2048 for DROID)")
+
+    # Mode
+    parser.add_argument("--mode", type=str, default="v3", choices=["v3", "legacy"], help="Output format mode")
 
     args = parser.parse_args()
     process_shards_native(args)

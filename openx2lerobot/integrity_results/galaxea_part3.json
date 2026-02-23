@@ -1,0 +1,58 @@
+{
+  "name": "galaxea_part3",
+  "path": "/fsx/ubuntu/taeyoung/data/processing/vla_pretrain_dataset/galaxea/galaxea_part3",
+  "ok": true,
+  "issues": [],
+  "info": {
+    "total_episodes": 25831,
+    "total_frames": 5692617,
+    "fps": 15,
+    "robot_type": "Galaxea",
+    "codebase_version": "v2.1",
+    "data_features": [
+      "observation.state",
+      "action",
+      "observation.joint_position_arm_left",
+      "observation.gripper_state_left",
+      "observation.joint_position_arm_right",
+      "observation.gripper_state_right",
+      "observation.joint_position_torso",
+      "original_action",
+      "absolute_action"
+    ],
+    "video_keys": [
+      "observation.images.wrist_right",
+      "observation.images.wrist_left",
+      "observation.images.primary"
+    ],
+    "episodes_jsonl_count": 25831,
+    "stats_keys": [
+      "observation.state",
+      "action",
+      "observation.joint_position_arm_left",
+      "observation.gripper_state_left",
+      "observation.joint_position_arm_right"
+    ],
+    "tasks_count": 3200,
+    "parquet_count": 25831,
+    "parquet_columns": [
+      "observation.state",
+      "action",
+      "task",
+      "observation.joint_position_arm_left",
+      "observation.gripper_state_left",
+      "observation.joint_position_arm_right",
+      "observation.gripper_state_right",
+      "observation.joint_position_torso",
+      "original_action",
+      "absolute_action",
+      "episode_index",
+      "frame_index",
+      "timestamp",
+      "index"
+    ],
+    "first_parquet_rows": 233,
+    "mp4_count": 77493
+  },
+  "checked_at": "2026-02-22T17:49:36.470740"
+}

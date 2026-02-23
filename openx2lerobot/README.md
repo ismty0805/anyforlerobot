@@ -1,6 +1,6 @@
 # VLA Pretrain Dataset - Conversion Status
 
-> Last updated: 2026-02-22 18:12 UTC
+> Last updated: 2026-02-23 04:53 UTC
 
 ## 📊 Overall Summary
 
@@ -31,8 +31,8 @@
 | `droid` | ✅ | 91,875 | 26,940,429 | 91,875 | 275,625 | 15 | Franka |
 | `fmb_dataset` | ✅ | 8,611 | 1,137,340 | 8,611 | 25,833 | 10 | Franka |
 | `fractal20220817_data` | ✅ | 87,212 | 3,786,400 | 87,212 | 87,212 | 3 | Google Robot |
-| `furniture_bench` | ✅ | 5,100 | 3,948,057 | 5,100 | 10,200 | 10 | Franka |
-| `iamlab_cmu` | ✅ | 631 | 146,241 | 631 | 1,262 | 20 | Franka |
+| `furniture_bench_dataset_converted_externally_to_rlds` | ✅ | 5,100 | 3,948,057 | 5,100 | 10,200 | 10 | Franka |
+| `iamlab_cmu_pickup_insert_converted_externally_to_rlds` | ✅ | 631 | 146,241 | 631 | 1,262 | 20 | Franka |
 | `jaco_play` | ✅ | 976 | 70,127 | 976 | 1,952 | 10 | jaco_2 |
 | `kuka` | ✅ | 209,880 | 2,455,879 | 209,880 | 209,880 | 10 | Kuka iiwa |
 | `language_table` | ✅ | 442,226 | 7,045,476 | 442,226 | 442,226 | 10 | xArm |
